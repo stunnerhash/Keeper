@@ -1,21 +1,13 @@
 import React from "react";
 import Footer from "./Footer";
-import Card from "./Card";
 import contacts from "./Contact";
+import createCard from "./CreateCard";
+
 function App(){
 	console.log (contacts);
 	return (
-   <div>
-		<Card
-			name = {contacts[0].name}
-			img =  {contacts[0].img} 
-			phone = {contacts[0].phone}
-		/>
-		<Card
-			name = {contacts[1].name}
-			img =  {contacts[1].img} 
-			phone = {contacts[1].phone}
-		/>
+    <div>
+		{contacts.map(createCard)}
 		<Footer/>
 	</div>);    
 }
